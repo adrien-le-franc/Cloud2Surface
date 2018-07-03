@@ -3,20 +3,11 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
-
 #include <glm/glm.hpp>
-
 #include "stdio.h"
 
 #include "quadtree.h"
 
-
-
-bool loadOBJ(
-    const char * path,
-    std::vector < glm::vec3 > & out_vertices,
-    std::vector < glm::vec3 > & out_normals
-);
 
 
 float scalar_product(glm::vec3 X, glm::vec3 Y);
@@ -46,6 +37,13 @@ public:
    
     float dist(const Data &D) const { return euclidean_distance(point, D.point); }
 };
+
+
+// function to load .obj file into a vector of Data
+bool loadOBJ(
+    const char * path,
+    std::vector <Data> & point_cloud
+);
 
 
 // class for unit cubes to map the 3D space

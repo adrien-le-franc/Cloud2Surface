@@ -112,16 +112,19 @@ int main(int argc, char **argv)
         ////////////////////////////////////////////
         printf("loading point cloud\n");
 
-        std::vector< glm::vec3 > vertices;
-        std::vector< glm::vec3 > normals; 
 
-        bool res = loadOBJ("/home/adrien/Projets/3D/X/data/fandisk.obj", vertices, normals);
+        //std::vector< glm::vec3 > vertices;
+        //std::vector< glm::vec3 > normals; 
 
         std::vector<Data> cloud;
 
-        for(int i=0; i<vertices.size(); i++){
-            cloud.push_back(Data(vertices[i], normals[i]));
-        }
+        bool res = loadOBJ("/home/adrien/Projets/3D/X/data/fandisk.obj", cloud);
+
+        
+
+        //for(int i=0; i<vertices.size(); i++){
+        //    cloud.push_back(Data(vertices[i], normals[i]));
+        //}
 
 
         printf("point cloud loaded\n");
